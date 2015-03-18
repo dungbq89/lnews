@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;
 use Illuminate\Console\Command;
+use Illuminate\Routing\Controller;
 use Symfony\Component\Console\Input\InputOption;
 
 class RouteListCommand extends Command {
@@ -152,6 +153,8 @@ class RouteListCommand extends Command {
 	 */
 	protected function getControllerMiddleware($actionName)
 	{
+		Controller::setRouter($this->laravel['router']);
+
 		$segments = explode('@', $actionName);
 
 		return $this->getControllerMiddlewareFromInstance(
@@ -192,8 +195,8 @@ class RouteListCommand extends Command {
 	 */
 	protected function methodExcludedByOptions($method, array $options)
 	{
-		return (( ! empty($options['only']) && ! in_array($method, (array) $options['only'])) ||
-			( ! empty($options['except']) && in_array($method, (array) $options['except'])));
+		return ( ! empty($options['only']) && ! in_array($method, (array) $options['only'])) ||
+			( ! empty($options['except']) && in_array($method, (array) $options['except']));
 	}
 
 	/**

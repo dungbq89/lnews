@@ -145,7 +145,11 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
         'App\Providers\ComposerServiceProvider',
-        'App\Providers\HelperServiceProvider'
+        'App\Providers\HelperServiceProvider',
+
+        ## ADD MORE
+        // Debug bar
+        'Barryvdh\Debugbar\ServiceProvider',
 	],
 
 	/*
@@ -196,6 +200,7 @@ return [
 
 	    ## ADD MORE
 		'Str'             => 'Illuminate\Support\Str',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 	],
 
 ];
