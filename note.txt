@@ -8,3 +8,25 @@ Vi du: https://laracasts.com/series/laravel-5-fundamentals/episodes/20
 Vi du: form contact 
 5. Validate request don gian va rat logic 
 Vi du: validate form contact 
+==============================
+IDE:
+phpstorm: https://plugins.jetbrains.com/plugin/7532
+codelobster: http://www.codelobster.com/laravel.html
+eclipse: https://gist.github.com/barryvdh/5227822.
+
+==============================
+CMS
+https://github.com/CodeSleeve/platform-core  --> Loai
+http://orchestraplatform.com/docs/3.0/installation --> Loai
+https://packagist.org/packages/anomaly/pyrocms --> Dang nghien cuu
+
+==============================
+Debugbar:
+https://packagist.org/packages/barryvdh/laravel-debugbar
+https://github.com/barryvdh/laravel-debugbar/tree/1.8
+http://phpdebugbar.com/docs/
+==============================
+Generate seed based on data from exist database:
+https://github.com/orangehill/iseed
+
+==============================
