@@ -3019,5 +3019,89 @@
             "profiler",
             "webprofiler"
         ]
+    },
+    {
+        "name": "captcha-com/captcha",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.captcha.com/botdetect-php-captcha-library.git",
+            "reference": "e32cfb38096b59aa110afcb80453b77c79855210"
+        },
+        "require": {
+            "php": ">=5.2.1"
+        },
+        "suggest": {
+            "captcha-com/laravel-captcha": "BotDetect 3 PHP Captcha integration for the Laravel framework."
+        },
+        "time": "2015-01-08 05:38:45",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Commercial"
+        ],
+        "authors": [
+            {
+                "name": "BotDetect Captcha",
+                "email": "botdetect.support@captcha.com",
+                "homepage": "http://captcha.com/php-captcha.html"
+            }
+        ],
+        "description": "BotDetect 3 PHP Captcha Free composer package.",
+        "homepage": "http://captcha.com/php-captcha.html",
+        "keywords": [
+            "captcha"
+        ]
+    },
+    {
+        "name": "captcha-com/laravel-captcha",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.captcha.com/botdetect-laravel-captcha.git",
+            "reference": "e1ec643af5279dcaba1a8872afc8ee90561220b1"
+        },
+        "require": {
+            "captcha-com/captcha": "3.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-02-26 09:03:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "src/Controllers"
+            ],
+            "psr-4": {
+                "BotDetectCaptcha\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "BotDetect Captcha",
+                "email": "botdetect.support@captcha.com",
+                "homepage": "http://captcha.com/doc/php/laravel-captcha-quickstart.html"
+            }
+        ],
+        "description": "BotDetect 3 PHP Captcha integration for the Laravel framework.",
+        "homepage": "http://captcha.com/doc/php/laravel-captcha-quickstart.html",
+        "keywords": [
+            "Laravel Captcha",
+            "captcha"
+        ]
     }
 ]

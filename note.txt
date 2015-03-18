@@ -30,3 +30,5 @@ Generate seed based on data from exist database:
 https://github.com/orangehill/iseed
 
 ==============================
+Captcha:
+http://captcha.com/doc/php/laravel-captcha-quickstart.html
