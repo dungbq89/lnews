@@ -1630,7 +1630,8 @@ li li a .sf-sub-indicator {
 }
 #track_input, 
 #contactForm #senderName, 
-#contactForm #senderEmail {
+#contactForm #senderEmail,
+#contactForm .text-input{
 	display: block;
 	width: 100%;
 	border: 1px solid #EAEAEA;

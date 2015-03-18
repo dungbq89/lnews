@@ -1,6 +1,8 @@
 @extends('frontend.layout')
 @section('main_content')
 
+<?php // {{ HTML::style(CaptchaUrls::LayoutStylesheetUrl()) }}?>
+<link type="text/css" rel="Stylesheet" href="<?php echo CaptchaUrls::LayoutStylesheetUrl() ?>" />
 <div class="page-content">			
   <div class="row clearfix">
     <div class="grid_9 alpha">
@@ -32,10 +34,20 @@
               <input type="text" name="email" id="senderEmail" placeholder="Email Address *" class="requiredField email"  maxlength="255">
             </div>
           </div>
-          <div>
+          <div style="margin-bottom: 10px;">
             <textarea name="message" id="message" placeholder="Message *" class="requiredField" rows="8"></textarea>
           </div>
-          
+            <div class="clearfix">
+                <div class="grid_6 alpha fll">
+                    <?php  echo $captchaHtml; ?>
+                </div>
+                <div class="grid_6 omega flr">
+                    <input type="text" name="CaptchaCode" id="CaptchaCode" placeholder="Captcha Code *" value="" class="text-input requiredField"/>
+                </div>
+            </div>
+          <div >
+
+          </div>
           <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <input type="submit" id="sendMessage" name="sendMessage" value="Send Email">
           <span>  </span>

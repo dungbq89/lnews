@@ -2,12 +2,24 @@
 
 namespace App\Http\Requests\frontend;
 
+use App\Http\Controllers\ContactController;
 use App\Http\Requests\Request;
+use BotDetectCaptcha\LaravelCaptcha\BotDetectLaravelCaptcha;
 use Response;
 use Illuminate\Http\JsonResponse;
 
+
 class ContactPostRequest extends Request {
 
+    public $Captcha;
+    public function __construct() {
+        $this->Captcha = ContactController::getCaptcha();
+//        $captchaConfig = array(
+//            'CaptchaId' => 'ExampleCaptcha', // an unique Id for the Captcha instance
+//            'UserInputId' => 'CaptchaCode' // the Id of the Captcha code input textbox
+//        );
+//        $this->Captcha = BotDetectLaravelCaptcha::GetCaptchaInstance($captchaConfig);
+    }
   /**
    * Determine if the user is authorized to make this request.
    *
@@ -23,6 +35,8 @@ class ContactPostRequest extends Request {
    * @return array
    */
   public function rules() {
+
+
     return [
       'name' => 'required|max:100',
       'email' => 'required|email|max:255',
@@ -52,5 +66,23 @@ class ContactPostRequest extends Request {
     }
     return $this->redirector->to($this->getRedirectUrl())->withInput($this->except($this->dontFlash))->withErrors($errors, $this->errorBag);
   }
+
+    /**
+     *
+     */
+    public function validate() {
+        // Captcha parameters
+
+        $captcha = $this->Captcha;
+        $code = \Illuminate\Support\Facades\Input::get('CaptchaCode');
+        echo $code.'---';
+        $isHuman = $captcha->Validate($code);
+        if (!$isHuman) {
+            echo 'Wrong code. Try again please.'; die;
+        } else {
+            parent::validate();
+        }
+
+    }
 
 }

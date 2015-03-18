@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
+use BotDetectCaptcha\LaravelCaptcha\BotDetectLaravelCaptcha;
 
 class ContactController extends Controller {
   /*
@@ -18,6 +19,7 @@ class ContactController extends Controller {
     |
    */
 
+    public $Captcha;
   /**
    * Create a new controller instance.
    *
@@ -25,8 +27,16 @@ class ContactController extends Controller {
    */
   public function __construct() {
 //		$this->middleware('auth');
+      $captchaConfig = array(
+          'CaptchaId' => 'ExampleCaptcha', // an unique Id for the Captcha instance
+          'UserInputId' => 'CaptchaCode' // the Id of the Captcha code input textbox
+      );
+      $this->Captcha = BotDetectLaravelCaptcha::GetCaptchaInstance($captchaConfig);
   }
 
+    public static function getCaptcha() {
+        return $this->Captcha();
+    }
   /**
    * Show the application dashboard to the user.
    *
@@ -34,7 +44,7 @@ class ContactController extends Controller {
    */
   public function index() {
 
-    return view('frontend.contact.index');
+    return view('frontend.contact.index')->with('captchaHtml', $this->Captcha->Html());
   }
 
   /**
