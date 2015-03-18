@@ -1,0 +1,10 @@
+Mot so diem manh cua Laravel
+1. Routing manh me, linh hoat 
+Vi du: group routing  
+2. Tai lieu tot, gom ca doc va video rat chi tiet
+Vi du: https://laracasts.com/series/laravel-5-fundamentals/episodes/20  
+3. Luong Xu ly token 
+4. Ajax thuan tien, don gian 
+Vi du: form contact 
+5. Validate request don gian va rat logic 
+Vi du: validate form contact 
