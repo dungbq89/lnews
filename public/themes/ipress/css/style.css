@@ -1631,7 +1631,7 @@ li li a .sf-sub-indicator {
 #track_input, 
 #contactForm #senderName, 
 #contactForm #senderEmail,
-#contactForm .text-input{
+#contactForm .text-input {
 	display: block;
 	width: 100%;
 	border: 1px solid #EAEAEA;
@@ -1645,6 +1645,7 @@ li li a .sf-sub-indicator {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
+#contactForm #CaptchaCode{text-transform: none !important;}
 #contactForm #message {
 	display: block;
 	width: 100%;
