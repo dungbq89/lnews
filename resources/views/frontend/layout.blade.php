@@ -75,10 +75,9 @@
 					<div class="logo">
 						<a href="{{ route('homepage') }}" title="iPress - Responsive News/Blog/Magazine HTML5"><img src="/themes/ipress/images/logo.png" alt="iPress - Responsive News/Blog/Magazine HTML5"></a>
 					</div><!-- /logo -->
-	
-					<div class="ads">
-						<a href="#" title="ADS"><img src="/themes/ipress/images/ads.jpg" alt="ADS"></a>
-					</div><!-- /ads -->
+
+                    @include('frontend.advertise.topAdvertise')
+
 				</div><!-- /row -->
 			</div><!-- /b head -->
 
