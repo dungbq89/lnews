@@ -1,2 +1,0 @@
-MyComposer Content <br />
-{{ $testVariable }}

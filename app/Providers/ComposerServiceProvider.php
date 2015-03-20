@@ -14,14 +14,13 @@ class ComposerServiceProvider extends ServiceProvider {
    */
   public function boot() {
     // Using class based composers...
-    View::composer('frontend.layout', 'App\Http\ViewComposers\MyTestComposer');
     View::composer('frontend.layout', 'App\Http\ViewComposers\FooterComposer');
 
     // Using Closure based composers...
-//        View::composer('frontend.layout', function()
+//        View::composer('frontend.layout', function($view)
 //        {
-//          $menu = 'A|B|C'; 
-//          $view->with('menus', $menus);
+//          $locationID = 1; // Right
+//          $view->with('testVariable', $menu);
 //        });
   }
 

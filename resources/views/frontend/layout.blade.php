@@ -27,8 +27,7 @@
 	<![endif]-->
 </head>
 <body>
-  {{ Str::words('Improving Search on the Envato Marketplaces: 2013 in Review', $limit = 5, $end = '...') }}
-   @include('frontend.default.myComposer')
+
 	<div id="layout" class="boxed">
 		<header id="header">
 			<div class="a_head">
@@ -74,7 +73,7 @@
 			<div class="b_head">
 				<div class="row clearfix">
 					<div class="logo">
-						<a href="index.html" title="iPress - Responsive News/Blog/Magazine HTML5"><img src="/themes/ipress/images/logo.png" alt="iPress - Responsive News/Blog/Magazine HTML5"></a>
+						<a href="{{ route('homepage') }}" title="iPress - Responsive News/Blog/Magazine HTML5"><img src="/themes/ipress/images/logo.png" alt="iPress - Responsive News/Blog/Magazine HTML5"></a>
 					</div><!-- /logo -->
 	
 					<div class="ads">

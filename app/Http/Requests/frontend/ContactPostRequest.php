@@ -11,14 +11,10 @@ use Illuminate\Http\JsonResponse;
 
 class ContactPostRequest extends Request {
 
-    public $Captcha;
+    public $captcha;
     public function __construct() {
-        $this->Captcha = ContactController::getCaptcha();
-//        $captchaConfig = array(
-//            'CaptchaId' => 'ExampleCaptcha', // an unique Id for the Captcha instance
-//            'UserInputId' => 'CaptchaCode' // the Id of the Captcha code input textbox
-//        );
-//        $this->Captcha = BotDetectLaravelCaptcha::GetCaptchaInstance($captchaConfig);
+
+        $this->captcha = BotDetectLaravelCaptcha::GetCaptchaInstance(ContactController::$captchaConfig);
     }
   /**
    * Determine if the user is authorized to make this request.
@@ -41,8 +37,10 @@ class ContactPostRequest extends Request {
       'name' => 'required|max:100',
       'email' => 'required|email|max:255',
       'message' => 'required|max:500',
+        'captcha_code' => 'required',
     ];
   }
+
 
   // OPTIONAL OVERRIDE
   public function forbiddenResponse() {
@@ -72,13 +70,11 @@ class ContactPostRequest extends Request {
      */
     public function validate() {
         // Captcha parameters
+        $code = \Illuminate\Support\Facades\Input::get('captcha_code');
 
-        $captcha = $this->Captcha;
-        $code = \Illuminate\Support\Facades\Input::get('CaptchaCode');
-        echo $code.'---';
-        $isHuman = $captcha->Validate($code);
+        $isHuman = $this->captcha->Validate($code);
         if (!$isHuman) {
-            echo 'Wrong code. Try again please.'; die;
+
         } else {
             parent::validate();
         }

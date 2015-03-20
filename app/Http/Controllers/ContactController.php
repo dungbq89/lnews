@@ -19,7 +19,11 @@ class ContactController extends Controller {
     |
    */
 
-    public $Captcha;
+    public $captcha;
+    public static $captchaConfig = array(
+        'CaptchaId' => 'contactCaptcha', // an unique Id for the Captcha instance
+        'UserInputId' => 'CaptchaCode' // the Id of the Captcha code input textbox
+    );
   /**
    * Create a new controller instance.
    *
@@ -27,16 +31,11 @@ class ContactController extends Controller {
    */
   public function __construct() {
 //		$this->middleware('auth');
-      $captchaConfig = array(
-          'CaptchaId' => 'ExampleCaptcha', // an unique Id for the Captcha instance
-          'UserInputId' => 'CaptchaCode' // the Id of the Captcha code input textbox
-      );
-      $this->Captcha = BotDetectLaravelCaptcha::GetCaptchaInstance($captchaConfig);
+
+      $this->captcha = BotDetectLaravelCaptcha::GetCaptchaInstance(self::$captchaConfig);
   }
 
-    public static function getCaptcha() {
-        return $this->Captcha();
-    }
+
   /**
    * Show the application dashboard to the user.
    *
@@ -44,7 +43,7 @@ class ContactController extends Controller {
    */
   public function index() {
 
-    return view('frontend.contact.index')->with('captchaHtml', $this->Captcha->Html());
+    return view('frontend.contact.index')->with('captchaHtml', $this->captcha->Html());
   }
 
   /**

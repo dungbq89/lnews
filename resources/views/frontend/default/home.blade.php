@@ -1,8 +1,8 @@
 @extends('frontend.layout')
 @section('main_content')
 
-
-
+    <?php echo $leftAdvBox ?>
+    <?php echo $rightAdvBox ?>
   <div class="page-content">			<div class="row clearfix">
       <div class="grid_9 alpha">
         <div class="ipress_slider mbf">
