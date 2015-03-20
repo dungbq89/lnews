@@ -7,17 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
 {
-
-  /**
-   * Register bindings in the container.
-   *
-   * @return void
-   */
-  public function boot() {
-    // Using class based composers...
-    View::composer('frontend.layout', 'App\Http\ViewComposers\FooterComposer');
-
-
     /**
      * Register bindings in the container.
      *

@@ -1,21 +1,9 @@
 @extends('frontend.layout')
 @section('main_content')
 
-<<<<<<< HEAD
+
     <?php echo $leftAdvBox ?>
     <?php echo $rightAdvBox ?>
-  <div class="page-content">			<div class="row clearfix">
-      <div class="grid_9 alpha">
-        <div class="ipress_slider mbf">
-          <div class="slider_a owl-carousel owl-theme">
-            <div class="item clearfix">
-              <div class="half">
-                <div class="slide_details">
-                  <a class="cat color3" href="#" title="View all posts under Entertainment">Entertainment</a>
-                  <span class="post_rating" href="#" title="Rating"><i class="fa fa-star"></i> 8.55</span>
-                  <h3><a href="single_post.html">Sed ut perspiciatis unde omnis iste</a></h3>
-=======
-
 
     <div class="page-content">
         <div class="row clearfix">
@@ -108,7 +96,7 @@
 
                     </div>
                     <!-- /slider -->
->>>>>>> origin/master
+
                 </div>
                 <!-- /slider ipress -->
 
