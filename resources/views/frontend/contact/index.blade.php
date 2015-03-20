@@ -45,13 +45,11 @@
                     <input type="text" name="captcha_code" id="CaptchaCode" placeholder="Captcha Code *" value="" class="text-input requiredField"/>
                 </div>
             </div>
-          <div >
-
-          </div>
+          <div style="clear:both"></div>
           <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <input type="submit" id="sendMessage" name="sendMessage" value="Send Email">
-          <span>  </span>
-          <div id="ajax-response">
+
+          <div id="ajax-response" style="margin: 11px 10px;display: inline-block;color: #F00;">
             
           </div>
         </form>
