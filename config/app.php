@@ -150,7 +150,11 @@ return [
         ## ADD MORE
         // Debug bar
         'Barryvdh\Debugbar\ServiceProvider',
-        "BotDetectCaptcha\LaravelCaptcha\LaravelCaptchaServiceProvider"
+        "BotDetectCaptcha\LaravelCaptcha\LaravelCaptchaServiceProvider",
+
+        ## Provider for Frontend
+        // Advertisment
+        'App\Providers\Frontend\AdvComposerServiceProvider',
 	],
 
 	/*

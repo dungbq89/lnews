@@ -30,7 +30,8 @@
         "App\\Providers\\ComposerServiceProvider",
         "App\\Providers\\HelperServiceProvider",
         "Barryvdh\\Debugbar\\ServiceProvider",
-        "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider"
+        "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
+        "App\\Providers\\Frontend\\AdvComposerServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -52,7 +53,8 @@
         "App\\Providers\\ComposerServiceProvider",
         "App\\Providers\\HelperServiceProvider",
         "Barryvdh\\Debugbar\\ServiceProvider",
-        "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider"
+        "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
+        "App\\Providers\\Frontend\\AdvComposerServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

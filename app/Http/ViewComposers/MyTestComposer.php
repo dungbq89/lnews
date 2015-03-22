@@ -23,7 +23,7 @@ class MyTestComposer {
    */
   public function compose(View $view) {
     // Code here 
-    // $viewdata= $view->getData();
+    $viewdata= $view->getData();
     $view->with('testVariable', 'Value from MyTest Composer');
   }
 

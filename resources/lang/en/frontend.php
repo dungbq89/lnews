@@ -14,5 +14,6 @@ return [
 	*/
 
 	'contact.error_9999' => 'Access deny!', 
-  'contact.post.success' => 'Successfully', 
+    'contact.post.success' => 'Successfully',
+    'contact.captcha_invalid' => 'Captcha is invalid!',
 ];

@@ -245,20 +245,20 @@ jQuery(document).ready(function ($) {
 			$('#contactForm .error').remove();
 			$('#contactForm .requiredField').removeClass('fielderror');
 			$('#contactForm .requiredField').addClass('fieldtrue');
-			$('#contactForm span strong').remove();
+			$('#contactForm #ajax-response strong').remove();
 			var hasError = false;
 			$('#contactForm .requiredField').each(function () {
 				if (jQuery.trim($(this).val()) === '') {
 					var labelText = $(this).prev('label').text();
 					$(this).addClass('fielderror');
-					$('#contactForm span').html('<strong>*Please fill out all fields.</strong>');
+					$('#contactForm #ajax-response').html('<strong>*Please fill out all fields.</strong>');
 					hasError = true;
 				} else if ($(this).hasClass('email')) {
 					var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 					if (!emailReg.test(jQuery.trim($(this).val()))) {
 						var labelText = $(this).prev('label').text();
 						$(this).addClass('fielderror');
-						$('#contactForm span').html('<strong>Is incorrect your email address</strong>');
+						$('#contactForm #ajax-response').html('<strong>Is incorrect your email address</strong>');
 						hasError = true;
 					}
 				}
@@ -276,13 +276,15 @@ jQuery(document).ready(function ($) {
                                             $(this).before('<div class="notification-box notification-box-success"><p><i class="fa-check"></i>Thanks!</strong> Your email was successfully sent. We check Our email all the time.</p></div>');
                                         });
                                     } else {
-                                        
+
                                         var html = '';
                                         for(var key in responseData) {
                                             console.log(key, responseData[key]);
                                             html += '<strong>' + responseData[key] + '</strong><br />'; 
                                         }
-                                        $('#contactForm span').html(html);
+                                        //$('#contactCaptcha_ReloadIcon').click();
+                                        contactCaptcha.ReloadImage();
+                                        $('#contactForm #ajax-response').html(html);
                                         $("#contactForm #sendMessage").removeAttr("disabled").removeClass("btn-success").val('Send Email');
                                     }
 				});
