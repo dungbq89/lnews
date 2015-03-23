@@ -1,10 +1,5 @@
 @extends('frontend.layout')
 @section('main_content')
-
-
-    <?php echo $leftAdvBox ?>
-    <?php echo $rightAdvBox ?>
-
     <div class="page-content">
         <div class="row clearfix">
             <div class="grid_9 alpha">
@@ -419,7 +414,7 @@
 
                 <div class="widget">
                     <div class="ads_widget clearfix">
-                        @include('frontend.advertise.rightAdvertise')
+                        <?php echo $rightAdvBox; ?>
 
                         <a href="#" class="lefter mt"><img src="/themes/ipress/images/ads3.jpg" alt="#"></a>
                         <a href="#" class="righter mt"><img src="/themes/ipress/images/ads3.jpg" alt="#"></a>

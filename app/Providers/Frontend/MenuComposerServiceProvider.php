@@ -3,10 +3,11 @@
 namespace App\Providers\Frontend;
 
 use App\Models\Advertise;
+use App\Models\Category;
 use View;
 use Illuminate\Support\ServiceProvider;
 
-class AdvComposerServiceProvider extends ServiceProvider
+class MenuComposerServiceProvider extends ServiceProvider
 {
 
     /**
@@ -19,17 +20,14 @@ class AdvComposerServiceProvider extends ServiceProvider
         // Using class based composers...
 
         // Using Closure based composers...
-        // Nhung vao 2 template: layout va default.home
-        View::composer(['frontend.layout', 'frontend.default.home'], function ($view) {
-            $topAdvView = View::make('frontend.advertise.top')
-                ->with('advertise', self::getAdvByLocation('top'));
-
-            $rightAdvView = View::make('frontend.advertise.right')
-                ->with('advertise', self::getAdvByLocation('right'));
+        // Nhung menu vao layout
+        View::composer(['frontend.layout'], function ($view) {
+            $category = Category::getMenu(6);
+            $navView = View::make('frontend.menu.menuNav')
+                ->with('categories', $category);
 
             // Day ra template
-            $view->with('topAdvBox', $topAdvView)
-                ->with('rightAdvBox', $rightAdvView);
+            $view->with('navView', $navView);
         });
     }
 

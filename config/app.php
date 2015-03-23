@@ -155,6 +155,7 @@ return [
         ## Provider for Frontend
         // Advertisment
         'App\Providers\Frontend\AdvComposerServiceProvider',
+        'App\Providers\Frontend\MenuComposerServiceProvider',
 	],
 
 	/*
