@@ -156,6 +156,10 @@ return [
         // Advertisment
         'App\Providers\Frontend\AdvComposerServiceProvider',
         'App\Providers\Frontend\MenuComposerServiceProvider',
+		
+		## Provider for backend
+		'SleepingOwl\Admin\AdminServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider',
 	],
 
 	/*
@@ -207,6 +211,17 @@ return [
 	    ## ADD MORE
 		'Str'             => 'Illuminate\Support\Str',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		
+		## Backend alias
+		'Admin'             => 'SleepingOwl\Admin\Admin',
+		'AdminAuth'         => 'SleepingOwl\AdminAuth\Facades\AdminAuth',
+		'AssetManager'      => 'SleepingOwl\Admin\AssetManager\AssetManager',
+		'Column'            => 'SleepingOwl\Admin\Columns\Column',
+		'FormItem'          => 'SleepingOwl\Admin\Models\Form\FormItem',
+		'ModelItem'         => 'SleepingOwl\Admin\Models\ModelItem',
+
+		'Form'      => 'Illuminate\Html\FormFacade',
+		'Html'      => 'Illuminate\Html\HtmlFacade',
 	],
 
 ];
