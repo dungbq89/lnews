@@ -16,4 +16,8 @@ class Category extends Model {
             ->limit($limit)
             ->get();
     }
+
+//    public static function findById($id){
+//        return Category::findById($id);
+//    }
 }   

@@ -317,47 +317,8 @@
                             </table>
                         </div>
                     </div>
-                    <!-- widget -->
 
-                    <div class="widget">
-                        <div class="title"><h4>Random Posts</h4></div>
-                        <div class="relative hover-shadow mb">
-                            <a href="single_post.html"><img src="/themes/ipress/images/assets/r_1.jpg" alt=""></a>
-
-                            <div class="r_content">
-                                <a class="cat color5" href="#" title="View all posts under Music">Music</a>
-
-                                <div class="r_title"><a href="single_post.html">At vero eos et accusamus et iusto</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- relative -->
-
-                        <div class="relative hover-shadow mb">
-                            <a href="single_post.html"><img src="/themes/ipress/images/assets/r_2.jpg" alt=""></a>
-
-                            <div class="r_content">
-                                <a class="cat color6" href="#" title="View all posts under TV">TV</a>
-
-                                <div class="r_title"><a href="single_post.html">A picture of Sin Fang in Bairro Alto</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- relative -->
-
-                        <div class="relative hover-shadow mb">
-                            <a href="single_post.html"><img src="/themes/ipress/images/assets/r_3.jpg" alt=""></a>
-
-                            <div class="r_content">
-                                <a class="cat color2" href="#" title="View all posts under Travel">Travel</a>
-
-                                <div class="r_title"><a href="single_post.html">Bairro Alto in Lisboa, Portugal</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- relative -->
-                    </div>
-                    <!-- widget -->
+                    <?php echo $randomPost; ?>
 
                     <div class="widget">
                         <div class="title"><h4>Popular Tags</h4></div>

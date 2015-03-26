@@ -156,6 +156,7 @@ return [
         // Advertisment
         'App\Providers\Frontend\AdvComposerServiceProvider',
         'App\Providers\Frontend\MenuComposerServiceProvider',
+        'App\Providers\Frontend\ArticleComposerServiceProvider',
 	],
 
 	/*
