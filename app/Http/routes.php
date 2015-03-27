@@ -26,7 +26,8 @@ Route::get('/chi-tiet-tin-tuc/{code}', array(
         'uses'=> 'ArticleController@detail'
     ));
 
-
+//chi tiet chuyen muc
+Route::get('/category/{code}', array('as' => 'category', 'uses' => 'CategoryController@index'));
 
 
 // Admin routes

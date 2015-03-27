@@ -3,57 +3,43 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\Contracts\View\View;
+use App\Models\Category;
+use App\Models\Article;
 
 class FooterComposer {
 //    protected $param;
 
-  /**
-   * Create a new  composer.
-   * @return void
-   */
-  public function __construct() {
-    // Dependencies automatically resolved by service container...
-  }
+    /**
+     * Create a new  composer.
+     * @return void
+     */
+    public function __construct() {
+        // Dependencies automatically resolved by service container...
+    }
 
-  /**
-   * Bind data to the view.
-   *
-   * @param  View  $view
-   * @return void
-   */
-  public function compose(View $view) {
-    // Code here
-    $recentPost = array(
-        array(
-            'title' => 'What is the worst could be the worst?',
-            'published_time' => '2015-02-28 21:32:54',
-            'image_path' => '/themes/ipress/images/assets/thumb4.jpg',
-            'comment' => 3
-        ), array(
-            'title' => 'Praesent ipsum adipiscing mi eget ipsum',
-            'published_time' => '2015-02-25 21:32:54',
-            'image_path' => '/themes/ipress/images/assets/thumb5.jpg',
-            'comment' => 1
-        ), array(
-            'title' => 'Paul Thomson on post with SoundCloud',
-            'published_time' => '2015-02-24 21:32:54',
-            'image_path' => '/themes/ipress/images/assets/thumb6.jpg',
-            'comment' => 1
-        ));
-    $view->with('recentPost', $recentPost);
-    $bestReview = array(
-        array(
-            'title' => 'What is the worst could be the worst?',
-            'published_time' => '2015-02-28 21:32:54',
-            'image_path' => '/themes/ipress/images/assets/thumb13.jpg',
-            'comment' => 3
-        ), array(
-            'title' => 'Praesent ipsum adipiscing mi eget ipsum',
-            'published_time' => '2015-02-25 21:32:54',
-            'image_path' => '/themes/ipress/images/assets/thumb12.jpg',
-            'comment' => 1
-    ));
-    $view->with('bestReview', $bestReview);
-  }
+    /**
+     * Bind data to the view.
+     *
+     * @param  View  $view
+     * @return void
+     */
+    public function compose(View $view) {
+        // Code here
+        $recentPost = Article::where('is_active', 2)
+                ->where('published_time', '<', date('Y-m-d H:i:s', time()))
+                ->orderBy('published_time')
+                ->take(3)
+                ->get();
+        $view->with('recentPost', $recentPost);
+        $bestReview = Article::where('article.is_active', 2)
+                ->leftJoin('category', function($join) {
+                            $join->on('article.category_id', '=', 'category.id');
+                        })
+                ->where('article.published_time', '<', date('Y-m-d H:i:s', time()))
+                ->orderBy('article.hit_count')
+                ->take(3)
+                ->get();
+        $view->with('bestReview', $bestReview);
+    }
 
 }
