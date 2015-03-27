@@ -14,9 +14,9 @@
                 <ul class="small_posts">
                     @foreach($recentPost as $post)
                     <li class="clearfix">
-                        <a class="s_thumb hover-shadow" href="single_post.html"><img width="70" height="70" src="{{$post['image_path']}}" alt="#"></a>
-                        <h3><a href="single_post.html">{{$post['title']}}</a></h3>
-                        <div class="meta mb"> 1 day ago  /  <a href="single_post.html">{{$post['comment']}} comment</a> </div>
+                        <a class="s_thumb hover-shadow" href="single_post.html"><img width="70" height="70" src="{{$post->image_path}}" alt="#"></a>
+                        <h3><a href="single_post.html">{{$post->alttitle}}</a></h3>
+                        <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($article->published_time))->diffForHumans() ?>  /  <a href="single_post.html">3 comment</a> </div>
                     </li>
                     @endforeach
                 </ul>
@@ -31,9 +31,9 @@
                 <ul class="small_posts">
                     @foreach($bestReview as $post)
                     <li class="clearfix">
-                        <a class="s_thumb hover-shadow" href="single_post.html"><img width="70" height="70" src="{{$post['image_path']}}" alt="#"></a>
-                        <h3><a href="single_post.html">{{$post['title']}}</a></h3>
-                        <div class="meta mb"> <a class="cat color1" href="#" title="View all posts under Entertainment">Entertainment</a><span class="post_rating" href="#" title="Rating">8.89</span> </div>
+                        <a class="s_thumb hover-shadow" href="single_post.html"><img width="70" height="70" src="{{$post->image_path}}" alt="#"></a>
+                        <h3><a href="single_post.html">{{$post->alttitle}}</a></h3>
+                        <div class="meta mb"> <a class="cat color1" href="/category/{{$post->code}}" title="View all posts under Entertainment">{{$post->name_vi}}</a><span class="post_rating" href="#" title="Rating">8.89</span> </div>
                     </li>
                     @endforeach
                 </ul>

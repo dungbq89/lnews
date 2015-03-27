@@ -156,7 +156,7 @@ return [
         // Advertisment
         'App\Providers\Frontend\AdvComposerServiceProvider',
         'App\Providers\Frontend\MenuComposerServiceProvider',
-		
+		'App\Providers\Frontend\ArticleComposerServiceProvider',
 		## Provider for backend
 		'SleepingOwl\Admin\AdminServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',

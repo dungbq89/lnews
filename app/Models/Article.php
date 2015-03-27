@@ -16,4 +16,11 @@ class Article extends Model {
                         ->first();
     }
 
+    //lay danh sach bai viet random
+    public static function getArticleRandom($limit){
+        return Article::where('is_active', '=', 1)
+            ->limit($limit)
+            ->get();
+    }
+
 }
