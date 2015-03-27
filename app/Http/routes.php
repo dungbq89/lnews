@@ -30,6 +30,7 @@ Route::get('/chi-tiet-tin-tuc/{code}', array(
 
 
 // Admin routes
+/*
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 {
   Route::controllers([
@@ -40,3 +41,4 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
   // Example route with an admin prefix
   Route::get('/', array('as' => 'admin.dashboard', 'uses' => 'Admin\HomeController@index'));
 });
+*/
