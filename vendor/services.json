@@ -33,7 +33,9 @@
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
         "App\\Providers\\Frontend\\MenuComposerServiceProvider",
-        "App\\Providers\\Frontend\\ArticleComposerServiceProvider"
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
+        "SleepingOwl\\Admin\\AdminServiceProvider",
+        "Illuminate\\Html\\HtmlServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -58,7 +60,8 @@
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
         "App\\Providers\\Frontend\\MenuComposerServiceProvider",
-        "App\\Providers\\Frontend\\ArticleComposerServiceProvider"
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
+        "SleepingOwl\\Admin\\AdminServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
@@ -136,7 +139,9 @@
         "auth.password": "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider",
         "auth.password.tokens": "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider",
         "translator": "Illuminate\\Translation\\TranslationServiceProvider",
-        "translation.loader": "Illuminate\\Translation\\TranslationServiceProvider"
+        "translation.loader": "Illuminate\\Translation\\TranslationServiceProvider",
+        "html": "Illuminate\\Html\\HtmlServiceProvider",
+        "form": "Illuminate\\Html\\HtmlServiceProvider"
     },
     "when": {
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [],
@@ -149,6 +154,7 @@
         "Illuminate\\Queue\\QueueServiceProvider": [],
         "Illuminate\\Redis\\RedisServiceProvider": [],
         "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider": [],
-        "Illuminate\\Translation\\TranslationServiceProvider": []
+        "Illuminate\\Translation\\TranslationServiceProvider": [],
+        "Illuminate\\Html\\HtmlServiceProvider": []
     }
 }

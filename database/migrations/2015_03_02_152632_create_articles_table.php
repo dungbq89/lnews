@@ -33,7 +33,6 @@ class CreateArticlesTable extends Migration {
             $table->bigInteger('is_active');
             $table->tinyInteger('is_hot');
             $table->string('code', 20);
-            $table->bigInteger('is_active');
 			$table->timestamps();
 		});
 	}
