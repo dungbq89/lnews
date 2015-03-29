@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Article;
 use Illuminate\Contracts\View\Factory;
 use Config;
+use \Request;
 
 class CategoryController extends Controller {
 
@@ -20,12 +21,12 @@ class CategoryController extends Controller {
         $articles = Article::where('category_id', $category->id)
                 ->where('is_active', 2)
                 ->orderBy('published_time')
-                ->paginate(10);
-//        if (Request::ajax()) {
-//            return Response::json(View::make('posts', array('posts' => $articles))->render());
-//        }
+                ->paginate(3);
         view()->share('articles', $articles);
         view()->share('category', $category);
+        if (Request::ajax()) {
+            return view('frontend.category.articleList');
+        }
         return view('frontend.category.index');
     }
 

@@ -7,7 +7,7 @@ Admin::model(\App\Models\Admin\Article::class)->title('Aticle')->with()->filters
     Column::string('alttitle', 'Alt Title');
 })->form(function () {
     FormItem::text('title', 'Title')->required();
-    //FormItem::image('image_path', 'Image');
+    FormItem::image('image_path', 'Image');
     FormItem::text('alttitle', 'Alt Title')->required();
     FormItem::textarea('header', 'Header')->required();
     FormItem::ckeditor('body', 'Content')->required();

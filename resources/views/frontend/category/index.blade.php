@@ -2,30 +2,13 @@
 @section('main_content')
 <div class="page-content">			
     <div class="row clearfix">
-        <div class="grid_9 alpha">
+        <div class="grid_9 alpha" id="detailCategory">
             <div class="grid_8 alpha posts">
                 <div class="title colordefault"><h4>Posts by category " {{$category->name_vi}} "</h4></div>
-
                 <!-- post -->
-                @foreach($articles as $article)
-                <div class="post_day mbf clearfix">
-                    <div class="grid_6 alpha relative">
-                        <a class="hover-shadow" href="single_post.html"><img src="{{$article->image_path}}" alt=""></a>
-                    </div><!-- /grid6 alpha -->
-                    <div class="grid_6 omega">
-                        <div class="post_day_content">
-                            <h3> <a href="single_post.html">{{$article->title}}</a> </h3>
-                            <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($article->published_time))->diffForHumans() ?>    /    <a href="single_post.html">0 comments</a> </div>
-                            <p> {{$article->header}} </p>
-                        </div><!-- /post content -->
-                    </div><!-- /grid6 omega -->
-                </div><!-- /post day -->
-                @endforeach
-                <div class="pagination-tt clearfix">
-                    <?php echo $articles->render(); ?>
-                    <span class="pages">Page <?php echo $articles->currentPage(); ?> of <?php echo $articles->lastPage(); ?></span>
+                <div id="listArticle">
+                @include('frontend.category.articleList')
                 </div>
-
             </div><!-- end grid9 -->
 
             <div class="grid_4 omega sidebar sidebar_b">

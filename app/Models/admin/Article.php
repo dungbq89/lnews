@@ -4,9 +4,10 @@ namespace App\Models\Admin;
 
 use SleepingOwl\Models\SleepingOwlModel;
 use SleepingOwl\Models\Interfaces\ModelWithImageFieldsInterface;
+use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
 
 class Article extends SleepingOwlModel implements ModelWithImageFieldsInterface {
-
+    use ModelWithImageOrFileFieldsTrait;
     protected $table = 'article';
 
     /**
@@ -14,7 +15,7 @@ class Article extends SleepingOwlModel implements ModelWithImageFieldsInterface 
      *
      * @var array
      */
-    protected $fillable = ['title', 'alttitle', 'header', 'body', 'category_id', 'is_active'];
+    protected $fillable = ['title', 'alttitle', 'header', 'body', 'category_id', 'is_active', 'image_path'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -23,14 +24,10 @@ class Article extends SleepingOwlModel implements ModelWithImageFieldsInterface 
      */
     protected $hidden = [];
 
+
     public function getImageFields() {
-        return [
-            'image' => 'images/uploads/article/',
-            'photo' => '',
-            'other' => ['images/uploads/article/', function($directory, $originalName, $extension) {
-            return $originalName;
-        }]
-        ];
+        return []; 
+        
     }
 
 }
