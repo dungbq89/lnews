@@ -30,16 +30,3 @@ Route::get('/chi-tiet-tin-tuc/{code}', array(
 Route::get('/category/{code}', array('as' => 'category', 'uses' => 'CategoryController@index'));
 
 
-// Admin routes
-/*
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
-{
-  Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-  ]);
-  
-  // Example route with an admin prefix
-  Route::get('/', array('as' => 'admin.dashboard', 'uses' => 'Admin\HomeController@index'));
-});
-*/

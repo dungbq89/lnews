@@ -32,6 +32,8 @@
         "Barryvdh\\Debugbar\\ServiceProvider",
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
+        "App\\Providers\\Frontend\\MenuComposerServiceProvider",
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
         "SleepingOwl\\Admin\\AdminServiceProvider",
         "Illuminate\\Html\\HtmlServiceProvider"
     ],
@@ -57,6 +59,8 @@
         "Barryvdh\\Debugbar\\ServiceProvider",
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
+        "App\\Providers\\Frontend\\MenuComposerServiceProvider",
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
         "SleepingOwl\\Admin\\AdminServiceProvider"
     ],
     "deferred": {
@@ -140,41 +144,17 @@
         "form": "Illuminate\\Html\\HtmlServiceProvider"
     },
     "when": {
-        "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [
-
-        ],
-        "Illuminate\\Bus\\BusServiceProvider": [
-
-        ],
-        "Illuminate\\Cache\\CacheServiceProvider": [
-
-        ],
-        "Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider": [
-
-        ],
-        "Illuminate\\Hashing\\HashServiceProvider": [
-
-        ],
-        "Illuminate\\Mail\\MailServiceProvider": [
-
-        ],
-        "Illuminate\\Pipeline\\PipelineServiceProvider": [
-
-        ],
-        "Illuminate\\Queue\\QueueServiceProvider": [
-
-        ],
-        "Illuminate\\Redis\\RedisServiceProvider": [
-
-        ],
-        "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider": [
-
-        ],
-        "Illuminate\\Translation\\TranslationServiceProvider": [
-
-        ],
-        "Illuminate\\Html\\HtmlServiceProvider": [
-
-        ]
+        "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [],
+        "Illuminate\\Bus\\BusServiceProvider": [],
+        "Illuminate\\Cache\\CacheServiceProvider": [],
+        "Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider": [],
+        "Illuminate\\Hashing\\HashServiceProvider": [],
+        "Illuminate\\Mail\\MailServiceProvider": [],
+        "Illuminate\\Pipeline\\PipelineServiceProvider": [],
+        "Illuminate\\Queue\\QueueServiceProvider": [],
+        "Illuminate\\Redis\\RedisServiceProvider": [],
+        "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider": [],
+        "Illuminate\\Translation\\TranslationServiceProvider": [],
+        "Illuminate\\Html\\HtmlServiceProvider": []
     }
 }
