@@ -178,7 +178,7 @@
                 <div class="ads_block mbf">
                     <a href="#"><img src="/themes/ipress/images/ads3.png" alt=""></a>
                 </div>
-                <!-- ads block -->
+                <!-- ads block --> 
             </div>
             <!-- end grid9 -->
 
