@@ -17,3 +17,4 @@
 
 Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
 Admin::menu(\App\Models\Admin\Contact::class)->icon('fa-user');
+Admin::menu(\App\Models\Admin\Advertise::class)->icon('fa-user');
