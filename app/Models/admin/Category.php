@@ -4,6 +4,7 @@ namespace App\Models\Admin;
 
 use SleepingOwl\Models\SleepingOwlModel;
 use SleepingOwl\Models\Interfaces\ModelWithImageFieldsInterface;
+use Illuminate\Support\Str;
 
 class Category extends SleepingOwlModel implements ModelWithImageFieldsInterface {
 
@@ -12,14 +13,23 @@ class Category extends SleepingOwlModel implements ModelWithImageFieldsInterface
 
     public function getImageFields() {
         return [
-            'image' => 'monuments/',
-            'photo' => '',
-            'other' => ['other_images/', function($directory, $originalName, $extension) {
-            return $originalName;
-        }]
+            'image_path' => 'uploads/category/'
         ];
     }
 
-    protected $fillable = ['name_vi', 'description', 'is_active'];
+    protected $fillable = ['name_vi', 'description', 'is_active', 'code'];
+
+    public static function boot() {
+        parent::boot();
+
+        static::creating(function($post) {
+            //$post->code = 
+            $slug = Str::slug($post->name_vi);
+            $slugCount = count(static::whereRaw("code REGEXP '^{$slug}(-[0-9]*)?$'")->get());
+
+            $post->code = ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
+            return $post;
+        });
+    }
 
 }
