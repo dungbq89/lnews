@@ -34,13 +34,13 @@ class Image extends BaseColumn
 		if ( ! $instance->$name->exists()) return '';
 		$img = $this->htmlBuilder->tag('img', [
 			'class'       => 'thumbnail',
-			'src'         => $instance->$name->thumbnail('admin_preview'),
+			'src'         => $instance->$name->getThumbUrl(100, 100),
 			'width'       => '80px',
 			'data-toggle' => 'tooltip',
 			'title'       => $instance->$name->info()
 		]);
 		return $this->htmlBuilder->tag('a', [
-			'href'        => $instance->$name->thumbnail('original'),
+			'href'        => $instance->$name->getThumbUrl(null, 400),
 			'data-toggle' => 'lightbox'
 		], $img);
 	}

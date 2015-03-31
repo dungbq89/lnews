@@ -127,4 +127,42 @@ class Image
 		return $this->filename;
 	}
 
+    /**
+     * Ham get anh thumb
+     * @param null $width
+     * @param null $height
+     * @param int $quality
+     * @param string $watermark
+     * @return string
+     */
+    public function getThumbUrl($width = null, $height = null, $quality = 100, $watermark = '')
+    {
+        $img = \Intervention\Image\Facades\Image::make($this->getFullPath());
+
+        if ($width || $height) {
+            $img->resize($width, $height);
+        } elseif ($width === null && $height === null )
+        {
+            // Neu ko truyen width height --> Tra ve anh goc
+            return $this->getPath();
+        }
+        if ($watermark)
+            $img->insert($watermark);
+
+        $thumbName = (($width)? $width: 'auto'). '_'.(($height)? $height: 'auto'). '_'. $this->filename;
+        $thumbFullPath = Config::get('app.media.cache_dir', 'cache'). '/images/'. $this->directory. '/';
+        $thumbFullFilePath = $thumbFullPath. $thumbName;
+        try {
+            if (!file_exists($thumbFullPath)) {
+                \Illuminate\Support\Facades\File::makeDirectory($thumbFullPath);
+
+            }
+
+            $img->save($thumbFullFilePath, $quality);
+            return '/cache/images/'. $this->directory. $thumbName;
+        } catch (Exception $e) {
+            Log::error('Image cannot be saved. '. $e->getCode(). ': '. $e->getMessage());
+        }
+
+    }
 } 
