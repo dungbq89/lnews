@@ -1,0 +1,8 @@
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+app/Providers/ComposerServiceProvider.php
+.idea/workspace.xml
+/.idea
+/nbproject/private/
+/.gitignore
