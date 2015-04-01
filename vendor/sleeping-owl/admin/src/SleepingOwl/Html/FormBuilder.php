@@ -289,7 +289,7 @@ class FormBuilder extends IlluminateFormBuilder
 				'title'       => $model->$name->info()
 			]);
 			$innerContent = $this->html->tag('a', [
-				'href'        => $model->$name->getThumbUrl(null, 100),
+				'href'        => $model->$name->getThumbUrl(null, 400),
 				'data-toggle' => 'lightbox'
 			], $img);
 			$innerContent .= $this->html->tag('a', [

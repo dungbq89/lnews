@@ -140,7 +140,11 @@ class Image
         $img = \Intervention\Image\Facades\Image::make($this->getFullPath());
 
         if ($width || $height) {
-            $img->resize($width, $height);
+            $img->resize($width, $height, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
         } elseif ($width === null && $height === null )
         {
             // Neu ko truyen width height --> Tra ve anh goc
@@ -153,13 +157,16 @@ class Image
         $thumbFullPath = Config::get('app.media.cache_dir', 'cache'). '/images/'. $this->directory. '/';
         $thumbFullFilePath = $thumbFullPath. $thumbName;
         try {
-            if (!file_exists($thumbFullPath)) {
-                \Illuminate\Support\Facades\File::makeDirectory($thumbFullPath, 0775, true);
+            if (!file_exists($thumbFullFilePath)) {
+                if (!file_exists($thumbFullPath)) {
+                    \Illuminate\Support\Facades\File::makeDirectory($thumbFullPath, 0775, true);
 
+                }
+
+                $img->save($thumbFullFilePath, $quality);
             }
+            return '/'. Config::get('app.media.cache_dir', 'cache'). '/images/'. $this->directory. $thumbName;
 
-            $img->save($thumbFullFilePath, $quality);
-            return '/cache/images/'. $this->directory. $thumbName;
         } catch (Exception $e) {
             Log::error('Image cannot be saved. '. $e->getCode(). ': '. $e->getMessage());
         }
