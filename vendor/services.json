@@ -32,6 +32,8 @@
         "Barryvdh\\Debugbar\\ServiceProvider",
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
+        "App\\Providers\\Frontend\\MenuComposerServiceProvider",
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
         "SleepingOwl\\Admin\\AdminServiceProvider",
         "Illuminate\\Html\\HtmlServiceProvider"
     ],
@@ -57,6 +59,8 @@
         "Barryvdh\\Debugbar\\ServiceProvider",
         "BotDetectCaptcha\\LaravelCaptcha\\LaravelCaptchaServiceProvider",
         "App\\Providers\\Frontend\\AdvComposerServiceProvider",
+        "App\\Providers\\Frontend\\MenuComposerServiceProvider",
+        "App\\Providers\\Frontend\\ArticleComposerServiceProvider",
         "SleepingOwl\\Admin\\AdminServiceProvider"
     ],
     "deferred": {
