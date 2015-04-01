@@ -14,6 +14,7 @@ Admin::model(\App\Models\Admin\Advertise::class)->title('Advertise')->with()->fi
 })->form(function ()
 {
 	FormItem::text('name', 'Name')->required();
+    FormItem::image('image_path', 'Image');
     FormItem::select('location_type', 'Location Type')->list(['top' => 'Top', 'right' => 'Right', 'small' => 'Small']);
     FormItem::text('link', 'Link');
     FormItem::text('priority', 'Priority')->required();
