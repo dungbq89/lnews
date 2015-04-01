@@ -29,17 +29,6 @@ class Article extends SleepingOwlModel implements ModelWithImageFieldsInterface 
         ];
     }
 
-    public function setImage($field, $image) {
-        parent::setImage($field, $image);
-        $file = $this->$field;
-        if (!$file->exists())
-            return;
-        $path = $file->getFullPath();
-
-        // you can use Intervention Image package features to change uploaded image
-        Image::make($path)->resize(10, 10)->save();
-    }
-
     public static function boot() {
         parent::boot();
 

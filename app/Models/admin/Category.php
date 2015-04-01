@@ -17,7 +17,7 @@ class Category extends SleepingOwlModel implements ModelWithImageFieldsInterface
         ];
     }
 
-    protected $fillable = ['name_vi', 'description', 'is_active', 'code'];
+    protected $fillable = ['name_vi', 'description', 'is_active', 'code', 'image_path'];
 
     public static function boot() {
         parent::boot();

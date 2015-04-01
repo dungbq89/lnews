@@ -154,7 +154,7 @@ class Image
         $thumbFullFilePath = $thumbFullPath. $thumbName;
         try {
             if (!file_exists($thumbFullPath)) {
-                \Illuminate\Support\Facades\File::makeDirectory($thumbFullPath);
+                \Illuminate\Support\Facades\File::makeDirectory($thumbFullPath, 0775, true);
 
             }
 

@@ -283,13 +283,13 @@ class FormBuilder extends IlluminateFormBuilder
 		{
 			$img = $this->html->tag('img', [
 				'class'       => 'thumbnail',
-				'src'         => $model->$name->thumbnail('admin_preview'),
+				'src'         => $model->$name->getThumbUrl(100, 100),
 				'width'       => '80px',
 				'data-toggle' => 'tooltip',
 				'title'       => $model->$name->info()
 			]);
 			$innerContent = $this->html->tag('a', [
-				'href'        => $model->$name->thumbnail('original'),
+				'href'        => $model->$name->getThumbUrl(null, 100),
 				'data-toggle' => 'lightbox'
 			], $img);
 			$innerContent .= $this->html->tag('a', [
