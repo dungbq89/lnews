@@ -22,5 +22,5 @@ class Article extends Model {
             ->limit($limit)
             ->get();
     }
-
+    
 }

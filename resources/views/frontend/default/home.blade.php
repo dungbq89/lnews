@@ -142,32 +142,32 @@
                         <!-- post content -->
                     </div>
                     @else
-                    @if($key == 1)
-                    <div class="grid_6 omega"><!--00000000000-->
-                        <div class="small_slider_music owl-carousel owl-theme">
-                            @endif
+                        @if($key == 1)
+                        <div class="grid_6 omega"><!--00000000000-->
+                            <div class="small_slider_music owl-carousel owl-theme">
+                        @endif
                             @if($key == 1 || $key == 5)
-                            <div class="item clearfix">
-                                <ul class="small_posts">
-                                    @endif
-                                    <li class="clearfix">
-                                        <a class="s_thumb hover-shadow" href="single_post.html">
-                                            <img width="70" height="70" src="{{$article->image_path}}" alt="#"/>
-                                        </a>
-
-                                        <h3><a href="single_post.html">{{$article->alttitle}}</a></h3>
-
-                                        <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($article->published_time))->diffForHumans() ?> / <a href="single_post.html">1
-                                                comments</a></div>
-                                    </li>
-                                    @if($key == 4 || $key == 8 || $key == count($article) -1)
-                                </ul>
-                            </div>
+                                <div class="item clearfix">
+                                    <ul class="small_posts">
                             @endif
-                            @if($key == count($articles) -1)
-                        </div>
-                    </div><!--e00000000000-->
-                    @endif
+                                        <li class="clearfix">
+                                            <a class="s_thumb hover-shadow" href="single_post.html">
+                                                <img width="70" height="70" src="{{$article->image_path}}" alt="#"/>
+                                            </a>
+
+                                            <h3><a href="single_post.html">{{$article->alttitle}}</a></h3>
+
+                                            <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($article->published_time))->diffForHumans() ?> / <a href="single_post.html">1
+                                                    comments</a></div>
+                                        </li>
+                                @if($key == 4 || $key == 8 || $key == count($articles) -1)
+                                    </ul>
+                                </div>
+                                @endif
+                        @if($key == count($articles) -1)
+                            </div>
+                        </div><!--e00000000000-->
+                        @endif
                     @endif
                     @endforeach
                     <!-- grid6 omega -->
@@ -178,8 +178,7 @@
                 <div class="ads_block mbf">
                     <a href="#"><img src="/themes/ipress/images/ads3.png" alt=""></a>
                 </div>
-                <!-- ads block -->
-
+                <!-- ads block --> 
             </div>
             <!-- end grid9 -->
 

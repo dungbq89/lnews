@@ -188,7 +188,27 @@
 <script src="/themes/ipress/js/jquery.ticker.js"></script>
 <script src="/themes/ipress/js/custom.js"></script>
 <script>
-    <![CDATA[
+    jQuery(document).ready(function(){
+        $('#listArticle').on('click', '.pagination a', function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: 0
+            }, 500);
+            $.ajax({
+                    url : url,
+                    success: function(data) {
+                        $('#listArticle').html(data);
+                        window.history.pushState('', "", url);
+                    },
+                    error: function() {
+                        alert('Posts could not be loaded.');
+                        location.reload();
+                    }
+                });
+            })
+        
+    })
     function date_time(id) {
         date = new Date;
         year = date.getFullYear();
@@ -216,7 +236,6 @@
         return true;
     }
     window.onload = date_time('date_time');
-    ]]>
 </script>
 </body>
 </html>

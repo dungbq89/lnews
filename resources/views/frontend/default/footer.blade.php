@@ -16,7 +16,7 @@
                     <li class="clearfix">
                         <a class="s_thumb hover-shadow" href="single_post.html"><img width="70" height="70" src="{{$post->image_path}}" alt="#"></a>
                         <h3><a href="single_post.html">{{$post->alttitle}}</a></h3>
-                        <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($article->published_time))->diffForHumans() ?>  /  <a href="single_post.html">3 comment</a> </div>
+                        <div class="meta mb"> <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($post->published_time))->diffForHumans() ?>  /  <a href="single_post.html">3 comment</a> </div>
                     </li>
                     @endforeach
                 </ul>
